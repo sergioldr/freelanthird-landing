@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import H1 from "../../components/h1.astro";
+import InfoLayout from "../../layouts/InfoLayout.astro";
+import ACGenerator from "../../assets/logo.jpg";
+import FluidPropulsion from "../../assets/importa.jpg";
+import ElectricMotor from "../../assets/cuna.jpg";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const projects = [
+     {
+          title: "Lorelins",
+          description: t("projects.lorelins.description"),
+          image: ACGenerator,
+          link: "https://lorelins-dashboard.vercel.app/"
+     },
+     {
+          title: "Importatucoche",
+          description: t("projects.importatucoche.description"),
+          image: FluidPropulsion,
+          link: "https://importatucoche.es/"
+     },
+     {
+          title: "Cuna del Alma",
+          description: t("projects.cuna.description"),
+          image: ElectricMotor,
+          link: "https://cunadelalma.com/"
+     }];
+---
+
+<InfoLayout>
+     <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh">
+          <H1> {t("projects.title")} </H1>
+
+          <ul class="mt-4 sm:mt-12 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-16 sm:gap-8">
+               {projects.map((project) => (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <li>
+                         <Image src={project.image} alt={project.title} class="aspect-[4/3] object-center object-cover rounded-lg shadow-lg mb-4 sm:mb-0 sm:mr-4" />
+                         <div class="p-1 sm:p-2">
+                              <h2 class="text-base text-zinc-100">{project.title}</h2>
+                              <p class="text-sm text-zinc-400 text-balance">{project.description}</p>
+                         </div>
+                    </li>
+                    </a>
+               ))}
+          </ul>
+     </div>
+</InfoLayout>

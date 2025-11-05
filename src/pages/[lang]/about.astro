@@ -1,0 +1,36 @@
+---
+import H1 from "../../components/h1.astro";
+import InfoLayout from "../../layouts/InfoLayout.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const achievementsList = t("about.achievements.list") as string[];
+
+---
+
+<InfoLayout>
+     <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh flex flex-col justify-between gap-32">
+          <div class="space-y-4 sm:space-y-12">
+               <H1> Sobre Freelanthird </H1>
+
+               <p class="text-xl xl:text-2xl text-zinc-500 text-balance">
+
+
+                    {t("about.description.1")} <a href="https://www.linkedin.com/in/sergio-lozano/" target="_blank" class="underline underline-offset-4 decoration-zinc-400 hover:text-zinc-50 hover:decoration-zinc-200">
+                    Sergio Lozano</a> {t("about.description.2")}
+               </p>
+          </div>
+
+          <div class="space-y-2 text-base sm:text-lg">
+               <h2 class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500">{t("about.achievements.title")}</h2>
+
+               <ul class="px-4 text-zinc-400 list-none">
+                    {achievementsList.map((item) => (
+                      <li>{item}</li>
+                    ))}
+               </ul>
+          </div>
+     </div>
+</InfoLayout>

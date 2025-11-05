@@ -1,0 +1,18 @@
+---
+import HomePage from "../../components/home-page.astro";
+import { languages } from "../../i18n/ui";
+import RootLayout from "../../layouts/RootLayout.astro";
+
+export async function getStaticPaths() {
+	return Object.keys(languages).map((lang) => ({
+		params: { lang },
+	}));
+}
+
+---
+
+<RootLayout>
+	<main>
+		<HomePage />
+	</main>
+</RootLayout>
