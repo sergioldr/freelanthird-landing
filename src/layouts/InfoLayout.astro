@@ -1,6 +1,6 @@
 ---
 import Footer from "../components/footer.astro";
-import WarpBackground from "../components/warp-background";
+import PixelBlast from "../components/PixelBlast";
 import RootLayout from "./RootLayout.astro";
 
 const { title, description } = Astro.props;
@@ -12,12 +12,14 @@ const pathname = Astro.url.pathname;
 	<div class="flex relative gap-4 w-full max-w-screen-xl">
 		<nav class="relative w-4 md:min-w-2xs xl:min-w-sm sm:min-h-screen sm:ml-4 sm:pb-4">
 			<div class="w-full h-full max-sm:w-4 md:max-w-2xs xl:max-w-sm fixed -z-10 sm:bottom-4 sm:rounded-b-full overflow-hidden">
-				<WarpBackground
-                    colors={["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF", "#FF922B", "#845EC2"]}
-					speed={0.15}
-					swirl={1.5}
-					swirlIterations={10}
-					shapeScale={0.3}
+				<PixelBlast
+					color="#71717a"
+					patternDensity={1.15}
+					pixelSize={4}
+					speed={0.5}
+					edgeFade={0.3}
+					liquid={true}
+					enableRipples={true}
 					client:load
 				/>
 			</div>
