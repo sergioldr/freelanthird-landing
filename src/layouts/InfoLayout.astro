@@ -14,10 +14,12 @@ const pathname = Astro.url.pathname;
 			<div class="w-full h-full max-sm:w-4 md:max-w-2xs xl:max-w-sm fixed -z-10 sm:bottom-4 sm:rounded-b-full overflow-hidden">
 				<PixelBlast
 					color="#71717a"
-					patternDensity={1.15}
+					patternDensity={1.8}
+					patternScale={0.5}
 					pixelSize={4}
+					pixelSizeJitter={1.2}
 					speed={0.5}
-					edgeFade={0.3}
+					edgeFade={0.03}
 					liquid={true}
 					enableRipples={true}
 					client:load
