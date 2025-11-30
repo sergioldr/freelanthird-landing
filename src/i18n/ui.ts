@@ -15,8 +15,13 @@ export const ui = {
     "nav.close": "Close",
     "hero.title": "Freelanthird",
     "hero.available": "Ready to collaborate",
+    "hero.tagline":
+      "turns your idea into the MVP. Fast, affordable, and stress-free. Book a call or see pricing.",
     "hero.bookCall": "Book a call",
     "hero.viewWork": "See our work",
+    "hero.launch": "Launch",
+    "hero.scale": "Scale",
+    "hero.monetize": "Monetize",
     "meta.title":
       "Freelanthird - We Build Apps for Creators | Revenue-Share Tech Studio",
     "meta.description":
@@ -52,12 +57,17 @@ export const ui = {
     "nav.blog": "Blog",
     "nav.about": "Sobre nosotros",
     "nav.contact": "Contacto",
-    "nav.projects": "Nuestros proyectos",
+    "nav.projects": "Proyectos",
     "nav.close": "Cerrar",
     "hero.title": "Freelanthird",
     "hero.available": "Listos para colaborar",
+    "hero.tagline":
+      "convierte tu idea en el MVP. Rápido, accesible y sin estrés. Agenda una llamada o consulta precios.",
     "hero.bookCall": "Hablemos",
     "hero.viewWork": "Ver nuestro trabajo",
+    "hero.launch": "Lanza",
+    "hero.scale": "Escala",
+    "hero.monetize": "Monetiza",
     "meta.title":
       "Freelanthird - Creamos Apps para Influencers | Estudio Tecnológico con Revenue-Share",
     "meta.description":

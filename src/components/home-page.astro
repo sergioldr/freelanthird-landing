@@ -11,10 +11,25 @@ const t = useTranslations(lang);
 
 <div class="group relative w-full min-h-dvh flex items-center justify-center">
 	<!-- Centered TitleAnimation -->
-	<div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+	<div class="absolute inset-0 flex items-start sm:items-center justify-center p-2 z-20 pointer-events-none">
 		<div class="pointer-events-auto">
 			<TitleAnimation client:load />
 		</div>
+	</div>
+
+	<!-- Mobile Menu Text -->
+	<div class="absolute inset-0 flex items-center justify-center z-10 px-6 my-50 sm:hidden">
+		<nav class="flex flex-col h-full w-full">
+			<div class="flex-1 relative overflow-hidden text-center flex items-center justify-center">
+				<span class="uppercase font-semibold text-white text-3xl">{t('hero.launch')}</span>
+			</div>
+			<div class="flex-1 relative overflow-hidden text-center border-t flex items-center justify-center">
+				<span class="uppercase font-semibold text-white text-3xl">{t('hero.scale')}</span>
+			</div>
+			<div class="flex-1 relative overflow-hidden text-center border-t flex items-center justify-center">
+				<span class="uppercase font-semibold text-white text-3xl">{t('hero.monetize')}</span>
+			</div>
+		</nav>
 	</div>
 	
 	<div class="p-4 sm:p-8 absolute w-full h-dvh flex flex-col justify-between z-10">
@@ -23,7 +38,7 @@ const t = useTranslations(lang);
 			<div></div>
 		</div>
 		<div>
-			<AvailableForWork className="py-4" text={t('hero.available')} />
+			<AvailableForWork className="py-4" text={String(t('hero.available'))} />
 			<div class="mb-2 sm:mb-4 flex items-center justify-between">
 				<div class="flex items-center gap-4">
 					<Link href="https://cal.com/freelanthird/30min">{t('hero.bookCall')}</Link>

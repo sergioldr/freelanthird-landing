@@ -2,10 +2,11 @@
 import { Image } from 'astro:assets';
 import H1 from "../../components/h1.astro";
 import InfoLayout from "../../layouts/InfoLayout.astro";
-import ACGenerator from "../../assets/logo.jpg";
+import ACGenerator from "../../assets/lorelins.jpg";
 import FluidPropulsion from "../../assets/importa.jpg";
 import ElectricMotor from "../../assets/cuna.jpg";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import SpotlightCard from '@/components/SpotlightCard';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -37,15 +38,17 @@ const projects = [
 
           <ul class="mt-4 sm:mt-12 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-16 sm:gap-8">
                {projects.map((project) => (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
                     <li>
-                         <Image src={project.image} alt={project.title} class="aspect-[4/3] object-center object-cover rounded-lg shadow-lg mb-4 sm:mb-0 sm:mr-4" />
-                         <div class="p-1 sm:p-2">
-                              <h2 class="text-base text-zinc-100">{project.title}</h2>
-                              <p class="text-sm text-zinc-400 text-balance">{project.description}</p>
-                         </div>
+                         <a href={project.link} target="_blank" rel="noopener noreferrer">
+                              <SpotlightCard client:visible className="h-full !p-0" spotlightColor="rgba(161, 161, 170, 0.2)">
+                                   <Image src={project.image} alt={project.title} class="aspect-[16/9] object-center object-cover rounded-t-3xl shadow-lg" />
+                                   <div class="p-6">
+                                        <h2 class="text-lg font-medium text-zinc-100">{project.title}</h2>
+                                        <p class="text-base text-zinc-400 text-balance mt-1">{project.description}</p>
+                                   </div>
+                              </SpotlightCard>
+                         </a>
                     </li>
-                    </a>
                ))}
           </ul>
      </div>

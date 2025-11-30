@@ -100,11 +100,9 @@ const TitleAnimation: React.FC<TitleAnimationProps> = ({
   }, []);
 
   return (
-    <div className={`flex justify-center items-center ${className || ""}`}>
+    <div className={`flex justify-center items-center p-4 ${className || ""}`}>
       <style>
-        {`
-          @import url('https://api.fontshare.com/v2/css?f[]=satoshi@901&display=swap');
-          
+        {`          
           .title-animation-svg {
             width: 100%;
             height: 200px;
@@ -119,7 +117,7 @@ const TitleAnimation: React.FC<TitleAnimationProps> = ({
           
           @media (max-width: 768px) {
             .title-animation-svg {
-              height: 120px;
+              height: 60px;
             }
           }
         `}
