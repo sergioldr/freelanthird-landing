@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+import { BOOKING_URL } from '../lib/constants';
 import AvailableForWork from "./available.astro";
 import Link from "./link.astro";
 import Navigation from "./navigation";
@@ -38,7 +39,7 @@ const accordionItems = [
 			<AvailableForWork className="py-4" text={String(t('hero.available'))} />
 			<div class="mb-2 sm:mb-4 flex items-center justify-between">
 				<div class="flex items-center gap-4">
-					<Link href="https://cal.com/freelanthird/30min">{t('hero.bookCall')}</Link>
+					<Link href={BOOKING_URL}>{t('hero.bookCall')}</Link>
 					<Link href={getLocalizedPath(lang, 'projects')} variant="secondary">{t('hero.viewWork')}</Link>
 				</div>
 
