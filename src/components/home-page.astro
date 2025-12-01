@@ -4,9 +4,16 @@ import AvailableForWork from "./available.astro";
 import Link from "./link.astro";
 import Navigation from "./navigation";
 import TitleAnimation from './title-animation';
+import HeroAccordion from './hero-accordion';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const accordionItems = [
+  { title: String(t('hero.launch')), description: String(t('hero.launch.desc')) },
+  { title: String(t('hero.scale')), description: String(t('hero.scale.desc')) },
+  { title: String(t('hero.monetize')), description: String(t('hero.monetize.desc')) },
+];
 ---
 
 <div class="group relative w-full min-h-dvh flex items-center justify-center">
@@ -18,18 +25,8 @@ const t = useTranslations(lang);
 	</div>
 
 	<!-- Mobile Menu Text -->
-	<div class="absolute inset-0 flex items-center justify-center z-10 px-6 my-50 sm:hidden">
-		<nav class="flex flex-col h-full w-full">
-			<div class="flex-1 relative overflow-hidden text-center flex items-center justify-center">
-				<span class="uppercase font-semibold text-white text-3xl">{t('hero.launch')}</span>
-			</div>
-			<div class="flex-1 relative overflow-hidden text-center border-t flex items-center justify-center">
-				<span class="uppercase font-semibold text-white text-3xl">{t('hero.scale')}</span>
-			</div>
-			<div class="flex-1 relative overflow-hidden text-center border-t flex items-center justify-center">
-				<span class="uppercase font-semibold text-white text-3xl">{t('hero.monetize')}</span>
-			</div>
-		</nav>
+	<div class="absolute inset-0 flex items-center justify-center z-30 px-6 my-50 sm:hidden">
+		<HeroAccordion client:load items={accordionItems} />
 	</div>
 	
 	<div class="p-4 sm:p-8 absolute w-full h-dvh flex flex-col justify-between z-10">

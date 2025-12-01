@@ -20,8 +20,14 @@ export const ui = {
     "hero.bookCall": "Book a call",
     "hero.viewWork": "See our work",
     "hero.launch": "Launch",
+    "hero.launch.desc":
+      "You bring the idea and the audience; we handle everything else. Design, development, hosting, maintenance, and ongoing support.",
     "hero.scale": "Scale",
+    "hero.scale.desc":
+      "We deliver a complete MVP ready to share with your community. You promote the product while we optimize conversion, retention, and monetization. Your audience gets real value, and you grow your digital ecosystem with zero extra effort.",
     "hero.monetize": "Monetize",
+    "hero.monetize.desc":
+      "The product becomes a digital asset that generates recurring income. You keep creating content; we handle support, improvements, updates, and daily operations. Both parties win every time the product works, grows, or sells.",
     "meta.title":
       "Freelanthird - We Build Apps for Creators | Revenue-Share Tech Studio",
     "meta.description":
@@ -66,8 +72,14 @@ export const ui = {
     "hero.bookCall": "Hablemos",
     "hero.viewWork": "Ver nuestro trabajo",
     "hero.launch": "Lanza",
+    "hero.launch.desc":
+      "Tú pones la idea y la audiencia; nosotros nos encargamos del resto. Diseño, desarrollo, hosting, mantenimiento y soporte continuo.",
     "hero.scale": "Escala",
+    "hero.scale.desc":
+      "Entregamos un MVP completo y listo para compartir con tu comunidad. Tú promocionas el producto mientras optimizamos conversión, retención y monetización. Tu audiencia recibe verdadero valor y tu ecosistema digital crece sin esfuerzo adicional.",
     "hero.monetize": "Monetiza",
+    "hero.monetize.desc":
+      "El producto se convierte en un activo digital que genera ingresos recurrentes. Tú sigues creando contenido; nosotros gestionamos soporte, mejoras, actualizaciones y operaciones diarias. Ambos ganamos cada vez que el producto funciona, crece o se vende.",
     "meta.title":
       "Freelanthird - Creamos Apps para Influencers | Estudio Tecnológico con Revenue-Share",
     "meta.description":
