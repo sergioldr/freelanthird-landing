@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import anime from "animejs";
+import { animate, type JSAnimation } from "animejs";
 
 interface TitleAnimationProps {
   className?: string;
@@ -16,7 +16,7 @@ const TitleAnimation: React.FC<TitleAnimationProps> = ({
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const patternRef = useRef<SVGPatternElement>(null);
-  const animationsRef = useRef<anime.AnimeInstance[]>([]);
+  const animationsRef = useRef<JSAnimation[]>([]);
 
   useEffect(() => {
     if (!patternRef.current) return;
@@ -53,22 +53,14 @@ const TitleAnimation: React.FC<TitleAnimationProps> = ({
         );
         pattern.appendChild(rect);
 
-        // Create and store animation instance using anime.js v3 syntax
-        const animation = anime({
-          targets: rect,
-          translateY: [
-            {
-              value: -20 + Math.random() * 40,
-              duration: 100 + Math.random() * 100,
-            },
-            {
-              value: 0,
-              duration: 1000 + Math.random() * 100,
-            },
-          ],
-          easing: "easeInOutSine",
+        // Create and store animation instance using anime.js v4 syntax
+        const targetY = -20 + Math.random() * 40;
+        const animation = animate(rect, {
+          translateY: [0, targetY],
+          ease: "inOutSine",
+          duration: 600 + Math.random() * 1500,
           loop: true,
-          direction: "alternate",
+          alternate: true,
           delay: Math.random() * 1000,
           autoplay: true,
         });
